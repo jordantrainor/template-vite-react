@@ -23,7 +23,7 @@
     /* utils */
     "baseUrl": "./src",
     "paths": {
-      "test-utils": ["./utils/test-utils"]
+      "test-utils": ["./utilities/test-utils"]
     }
   },
   "include": ["src"],

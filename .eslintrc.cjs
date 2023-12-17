@@ -10,10 +10,13 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "prettier",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs"],
+  ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.ts", "jest.config.ts"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
+    ecmaFeatures: {
+      jsx: true,
+    },
     sourceType: "module",
     project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
@@ -25,6 +28,11 @@ module.exports = {
     "simple-import-sort",
     "unused-imports",
   ],
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   rules: {
     "react-refresh/only-export-components": [
       "warn",
@@ -80,9 +88,6 @@ module.exports = {
             ],
           },
         ],
-        parserOptions: {
-          project: ["./tsconfig.json"], // Specify it only for TypeScript files
-        },
       },
     },
   ],
